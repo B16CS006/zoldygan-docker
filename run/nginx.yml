@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  nginx:
+    image: nginx:1.21
+    restart: always
+    networks:
+      - frontend
+    ports:
+      - 80:80
+      - 10080:10080
+    volumes:
+      - /opt/docker/data/nginx/configs/:/etc/nginx/
+      - /opt/docker/data/nginx/www:/usr/share/nginx
+      - /opt/docker/data/nginx/modules:/usr/lib/nginx/modules
+      - /opt/docker/config/nginx/auth:/etc/nginx/auth
+      - /var/log/nginx:/var/log/nginx

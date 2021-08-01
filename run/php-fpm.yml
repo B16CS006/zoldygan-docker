@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  php-fpm:
+    image: zoldygan:php-fpm
+    # restart: always
+    networks:
+      - frontend
+    ports:
+      - 19000:9000
+    volumes:
+      - /opt/docker/data/nginx/www:/var/www/:ro
+      - /opt/docker/data/php/php.ini:/etc/php/7.4/fpm/php.ini
