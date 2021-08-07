@@ -4,13 +4,18 @@ services:
     image: nginx:1.21
     restart: always
     networks:
-      - frontend
+      - backend
     ports:
       - 80:80
-      - 10080:10080
+      - 443:443
     volumes:
-      - /opt/docker/data/nginx/configs/:/etc/nginx/
-      - /opt/docker/data/nginx/www:/usr/share/nginx
-      - /opt/docker/data/nginx/modules:/usr/lib/nginx/modules
-      - /opt/docker/config/nginx/auth:/etc/nginx/auth
+      - /opt/docker/data/nginx/configs/:/etc/nginx/:ro
+      - /opt/docker/data/www:/usr/share/nginx:ro
+      - /opt/docker/data/nginx/modules:/usr/lib/nginx/modules:ro
+      - /opt/docker/config/nginx/auth:/etc/nginx/auth:ro
       - /var/log/nginx:/var/log/nginx
+
+networks:
+  backend:
+    external:
+     name: backend

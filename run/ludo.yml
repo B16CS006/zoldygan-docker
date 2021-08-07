@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  ludo:
+    image: zoldygan:ludo
+    restart: always
+    networks:
+      - backend
+    volumes:
+      - /opt/docker/data/www/madhav/ludo:/app:ro
+
+networks:
+  backend:
+    external:
+     name: backend

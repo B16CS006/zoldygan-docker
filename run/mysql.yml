@@ -11,17 +11,22 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql
     volumes:
-      - /opt/docker/config/zoldygan/mysql/mysql_root_password:/run/secrets/mysql:ro
+      - /opt/docker/config/zoldygan/mysql/mysql_root_password.secret:/run/secrets/mysql:ro
       - /opt/docker/data/zoldygan/mysql:/var/lib/mysql
 
-  adminer:
-    image: adminer:4
-    # restart: always
-    networks:
-      - frontend
-    ports:
-      - 18080:8080
+  # adminer:
+  #   image: adminer:4
+  #   # restart: always
+  #   networks:
+  #     - frontend
+  #   ports:
+  #     - 18080:8080
 
-        # networks:
-        #   backend:
-        #   frontend:
+  #       # networks:
+  #       #   backend:
+  #       #   frontend:
+
+networks:
+  backend:
+    external:
+     name: backend

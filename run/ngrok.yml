@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   ngrok:
-    image: ngrok:zoldygan
+    image: zoldygan:ngrok
     command: ngrok http -host-header=berozgarx.io 10080
     restart: always
     network_mode: host
