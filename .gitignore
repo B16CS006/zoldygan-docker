@@ -1,5 +1,5 @@
 data/www/
-data/zoldygan/mysql/
+data/mysql/
 **.swap
 **.key
 **.crt

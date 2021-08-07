@@ -11,8 +11,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql
     volumes:
-      - /opt/docker/config/zoldygan/mysql/mysql_root_password.secret:/run/secrets/mysql:ro
-      - /opt/docker/data/zoldygan/mysql:/var/lib/mysql
+      - /opt/docker/config/mysql/mysql_root_password.secret:/run/secrets/mysql:ro
+      - /opt/docker/data/mysql:/var/lib/mysql
 
   # adminer:
   #   image: adminer:4
