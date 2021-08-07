@@ -1,3 +1,4 @@
+config/
 data/www/
 data/mysql/
 **.swap

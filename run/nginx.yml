@@ -13,6 +13,7 @@ services:
       - /opt/docker/data/www:/usr/share/nginx:ro
       - /opt/docker/data/nginx/modules:/usr/lib/nginx/modules:ro
       - /opt/docker/config/nginx/auth:/etc/nginx/auth:ro
+      - /opt/docker/config/nginx/certs:/etc/nginx/certs:ro
       - /var/log/nginx:/var/log/nginx
 
 networks:
