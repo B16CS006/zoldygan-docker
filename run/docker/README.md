@@ -25,3 +25,4 @@ There are few point to remember:
 - Since all container are running on same network, they can talk to each using ip or even `container name` as well (use service name for docker-compose conatiners)
 - `Port 80` of nginx container is mapped to the host machine so that we can direct traffic from outside world to it
 - Django application are now accepting the connection only from from `ludo`, if you see nginx config then there we redirect traffic to `ludo:8001` if we use other then we would not get the website(not sure if localhost lies in this catagory)
+- auth,certs folder should be there in /etc/nginx (empty), because we are mounting these folder and we are using read-only permission on /etc/nginx so docker will not be able to create the folder auth,certs and hence we get error

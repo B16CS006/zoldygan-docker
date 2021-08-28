@@ -1,7 +1,7 @@
 up: fpm.yml ludo.yml nginx.yml mysql.yml
-	@docker-compose -f /opt/docker/run/ludo.yml -f /opt/docker/run/fpm.yml -f /opt/docker/run/nginx.yml -f /opt/docker/run/fpm.yml -f /opt/docker/run/mysql.yml up -d
+	@docker-compose -f ludo.yml -f fpm.yml -f nginx.yml -f mysql.yml up -d
 down: fpm.yml ludo.yml nginx.yml mysql.yml
-	@docker-compose -f /opt/docker/run/ludo.yml -f /opt/docker/run/fpm.yml -f /opt/docker/run/nginx.yml -f /opt/docker/run/fpm.yml -f /opt/docker/run/mysql.yml down
+	@docker-compose -f ludo.yml -f fpm.yml -f nginx.yml -f mysql.yml down
 
 network-up:
 	docker network create -d bridge --subnet 172.24.0.0/16 backend

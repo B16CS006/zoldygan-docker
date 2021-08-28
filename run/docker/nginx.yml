@@ -15,6 +15,7 @@ services:
       - /opt/docker/config/nginx/auth:/etc/nginx/auth:ro
       - /opt/docker/config/nginx/certs:/etc/nginx/certs:ro
       - /var/log/nginx:/var/log/nginx
+      - /home/chetanprakashmeena13/certbot/www:/www
 
 networks:
   backend:
