@@ -6,7 +6,7 @@ services:
     networks:
       - default
     volumes:
-      - /opt/docker/data/www:/var/www/:ro
+      - /opt/docker/data/www:/var/www/ #:ro
 
 networks:
   default:
