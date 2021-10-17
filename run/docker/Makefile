@@ -36,3 +36,10 @@ mysql-down:
 	@docker-compose -f mysql.yml down
 mysql-restart:
 	@docker-compose -f mysql.yml restart
+
+gfashion-up:
+	@docker-compose -f gfashion.yml up -d
+gfashion-down:
+	@docker-compose -f gfashion.yml down
+gfashion-restart:
+	@docker-compose -f gfashion.yml restart
